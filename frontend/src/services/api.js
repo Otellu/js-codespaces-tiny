@@ -20,76 +20,20 @@ const handleResponse = async (response) => {
   return await response.json();
 };
 
-const authAPI = {
-  login: async (credentials) => {
-    const response = await fetch(`${API_URL}/auth/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(credentials),
-    });
+// Minimal posts API aligned with current app
+const postsAPI = {
+  list: async () => {
+    const response = await fetch(`${API_URL}/posts`);
     return handleResponse(response);
   },
-
-  signup: async (userData) => {
-    const response = await fetch(`${API_URL}/auth/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
+  upvote: async (postId) => {
+    const response = await fetch(`${API_URL}/posts/${postId}/upvote`, { method: 'POST' });
     return handleResponse(response);
   },
+  unvote: async (postId) => {
+    const response = await fetch(`${API_URL}/posts/${postId}/upvote`, { method: 'DELETE' });
+    return handleResponse(response);
+  }
 };
 
-const pizzaAPI = {
-  getAll: async () => {
-    const response = await fetch(`${API_URL}/pizzas`);
-    return handleResponse(response);
-  },
-
-  getAllWithQuery: async (queryParams) => {
-    const params = new URLSearchParams(queryParams);
-    const response = await fetch(`${API_URL}/pizzas?${params}`);
-    return handleResponse(response);
-  },
-};
-
-const orderAPI = {
-  create: async (orderData) => {
-    const token = localStorage.getItem('token');
-    const response = await fetch(`${API_URL}/orders`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify(orderData),
-    });
-    return handleResponse(response);
-  },
-
-  getUserOrders: async () => {
-    const token = localStorage.getItem('token');
-    const response = await fetch(`${API_URL}/orders/mine`, {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    return handleResponse(response);
-  },
-
-  getAll: async () => {
-    const token = localStorage.getItem('token');
-    const response = await fetch(`${API_URL}/admin/orders`, {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    return handleResponse(response);
-  },
-};
-
-export { authAPI, pizzaAPI, orderAPI };
+export { postsAPI };

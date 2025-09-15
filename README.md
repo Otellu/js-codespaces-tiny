@@ -1,8 +1,8 @@
-# ⚡ MERN Mini-Assessment: Reddit-Style Upvote
+# ⚡ MERN Mini: Reddit-Style Upvote
 
 Build a tiny Reddit-like feed with an upvote button that persists to MongoDB.
 
-This is a tiny feature, that you will be implementing across the full stack (frontend, backend, db schema).
+This is a tiny feature implemented across the full stack (frontend, backend, db schema).
 
 ## Desired outcomes
 - Add a button next to a post's upvote number to let the user upvote that post. You have full freedom over style
@@ -19,3 +19,11 @@ docker-compose up -d
 npm run db:init   # optional seed
 npm run dev
 ```
+
+## Tech
+- Backend: Express + Mongoose, permissive CORS
+- Frontend: React + Tailwind styles
+- Database: MongoDB (Docker compose service)
+
+## Notes
+- The previous pizza shop scaffolding has been removed. Packages, APIs, and seeds now reflect posts and upvotes.
