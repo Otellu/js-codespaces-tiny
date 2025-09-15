@@ -6,8 +6,8 @@ export default function RedditHeader() {
       <div className="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">r</div>
         <div>
-          <div className="text-lg font-semibold">r/mernmini</div>
-          <div className="text-xs text-gray-500">A tiny MERN demo subreddit</div>
+          <div className="text-lg font-semibold">r/jsmini</div>
+          <div className="text-xs text-gray-500">A tiny JS demo subreddit</div>
         </div>
       </div>
     </div>

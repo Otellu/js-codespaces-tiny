@@ -8,7 +8,7 @@ export default function RedditSidebar() {
         <div className="p-4">
           <div className="font-semibold mb-1">About Community</div>
           <p className="text-sm text-gray-600">
-            r/mernmini is a demo subreddit for a tiny MERN upvote example.
+            r/jsmini is a demo subreddit for a tiny JS upvote example.
           </p>
         </div>
       </div>

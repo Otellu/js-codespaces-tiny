@@ -13,7 +13,7 @@ const buildSequelize = () => {
     });
   }
 
-  const dbName = process.env.POSTGRES_DB || 'mern_mini';
+  const dbName = process.env.POSTGRES_DB || 'js_mini';
   const dbUser = process.env.POSTGRES_USER || 'postgres';
   const dbPass = process.env.POSTGRES_PASSWORD || 'postgres';
   const dbHost = process.env.POSTGRES_HOST || 'localhost';

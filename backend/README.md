@@ -1,4 +1,4 @@
-# Mini Backend (Express + MongoDB)
+# Mini Backend (Express + Postgres)
 
 ## Setup
 1. Install dependencies
@@ -6,7 +6,7 @@
 npm install
 ```
 2. Set env (optional)
-- `MONGODB_URI` (defaults to `mongodb://localhost:27017/mern-mini`)
+- `DATABASE_URL` (defaults to `postgres://postgres:postgres@localhost:5432/js_mini`)
 - `PORT` (defaults to 8081 via root compose)
 
 3. Seed database (from repo root preferred)

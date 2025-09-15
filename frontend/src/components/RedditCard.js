@@ -8,7 +8,7 @@ export default function RedditCard({ title, votes, username }) {
           <div className="text-sm font-semibold text-gray-700">{votes}</div>
         </div>
         <div className="flex-1 p-4">
-          <div className="text-xs text-gray-500 mb-1">Posted by {username} in r/mernmini</div>
+          <div className="text-xs text-gray-500 mb-1">Posted by {username} in r/jsmini</div>
           <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
         </div>
       </div>

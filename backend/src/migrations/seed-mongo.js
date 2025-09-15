@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 async function seed() {
-  const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/mern-mini';
+  const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/js-mini';
   await mongoose.connect(mongoUri);
 
   await Post.deleteMany({});

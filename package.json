@@ -1,7 +1,7 @@
 {
   "name": "js-codespaces",
   "version": "1.0.0",
-  "description": "MERN mini Reddit-style upvote app (MongoDB, Express, React, Node)",
+  "description": "JS mini Reddit-style upvote app (Postgres, Express, React, Node)",
   "private": true,
   "scripts": {
     "dev:all": "concurrently --kill-others-on-fail --prefix-colors \"bgBlue.bold,bgMagenta.bold\" --prefix \"[{name}]\" --names \"Backend,Frontend\" \"npm run dev:backend\" \"npm run dev:frontend:wait\"",

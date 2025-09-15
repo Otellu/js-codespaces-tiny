@@ -1,4 +1,4 @@
-# ⚡ MERN Mini: Reddit-Style Upvote
+# ⚡ JS Mini: Reddit-Style Upvote
 
 Build a tiny Reddit-like feed with an upvote button that persists to MongoDB.
 
