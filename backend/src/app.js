@@ -8,19 +8,20 @@ dotenv.config();
 
 const app = express();
 
-// CORS configuration following go-js pattern
+// Permissive CORS configuration: allow any origin and credentials
 const corsOptions = {
-  origin: process.env.CODESPACES === 'true' ? true : [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://localhost:3001',
-    'http://127.0.0.1:3001'
-  ],
-  credentials: process.env.CODESPACES === 'true' ? false : true,
+  // Reflect the request Origin header, allowing all origins including non-browser clients
+  origin: true,
+  // Allow cookies/authorization headers
+  credentials: true,
+  // Allow all common methods
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  exposedHeaders: ['Content-Length', 'X-Request-Id'],
-  maxAge: process.env.CODESPACES === 'true' ? 3600 : 300
+  // Accept any requested headers
+  allowedHeaders: ['*'],
+  // Expose all headers to the browser
+  exposedHeaders: ['*'],
+  // Cache preflight responses for a day
+  maxAge: 86400
 };
 
 // Middleware
@@ -28,10 +29,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(logger);
 
-// Global OPTIONS handler for preflight requests (following go-js pattern)
-app.options('*', (req, res) => {
-  res.status(204).send();
-});
+// Global OPTIONS handler for preflight requests, using the same permissive CORS config
+app.options('*', cors(corsOptions));
 
 // Health check endpoint
 app.get('/health', (req, res) => {
