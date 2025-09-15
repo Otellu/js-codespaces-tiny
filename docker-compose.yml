@@ -1,11 +1,15 @@
 services:
-  mongo:
-    image: mongo:6.0
+  postgres:
+    image: postgres:16
     restart: unless-stopped
+    environment:
+      POSTGRES_DB: mern_mini
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
-      - "27017:27017"
+      - "5432:5432"
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -18,12 +22,16 @@ services:
       - .:/workspace:cached
     environment:
       NODE_ENV: development
-      MONGODB_URI: mongodb://mongo:27017/mern-mini
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: mern_mini
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_PORT: 5432
       PORT: 8081
     ports:
       - "3000:3000"
       - "8081:8081"
     depends_on:
-      mongo:
+      postgres:
         condition: service_healthy
     command: tail -f /dev/null

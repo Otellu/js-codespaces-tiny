@@ -1,14 +1,34 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const { getSequelize } = require('../config/database');
 
-const postSchema = new mongoose.Schema(
-  {
-    title: { type: String, required: true, trim: true },
-    username: { type: String, required: true, trim: true },
-    votes: { type: Number, default: 0 }
+// Lazily initialize the model to ensure sequelize connection is ready
+const sequelize = getSequelize();
+
+const Post = sequelize.define('Post', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
   },
-  { timestamps: true }
-);
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  votes: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
+  }
+}, {
+  tableName: 'posts',
+  timestamps: true,
+  underscored: true
+});
 
-module.exports = mongoose.model('Post', postSchema);
+module.exports = Post;
 
 

@@ -3,7 +3,9 @@ const { Post } = require('../models');
 
 const listPosts = async (req, res) => {
   try {
-    const posts = await Post.find({}).sort({ createdAt: -1 });
+    const posts = await Post.findAll({
+      order: [['createdAt', 'DESC']]
+    });
     res.json(posts);
   } catch (err) {
     res.status(500).json({ message: 'Failed to list posts' });
@@ -11,7 +13,19 @@ const listPosts = async (req, res) => {
 };
 
 const getPostById = async (req, res) => {
-  return res.status(501).json({ todo: 'Implement GET /api/posts/:id' });
+  try {
+    const postId = Number(req.params.id);
+    if (Number.isNaN(postId)) {
+      return res.status(400).json({ message: 'Invalid id' });
+    }
+    const post = await Post.findByPk(postId);
+    if (!post) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+    return res.json(post);
+  } catch (err) {
+    return res.status(500).json({ message: 'Failed to get post' });
+  }
 };
 
 
