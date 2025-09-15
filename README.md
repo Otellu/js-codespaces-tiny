@@ -22,11 +22,3 @@ Then open the frontend in another tab in your browser:
 3. Find the frontend, hover, and click on the globe icon to go to the live frontend URL
 
 Hot-reloading will be enabled.
-
-## Tech
-- Backend: Express + Mongoose, permissive CORS
-- Frontend: React + Tailwind styles
-- Database: MongoDB (Docker compose service)
-
-## Notes
-- The previous pizza shop scaffolding has been removed. Packages, APIs, and seeds now reflect posts and upvotes.
