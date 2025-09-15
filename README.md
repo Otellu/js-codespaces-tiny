@@ -15,7 +15,7 @@ This is a tiny feature implemented across the full stack (frontend, backend, db 
 
 ## Getting started
 ```bash
-npm run dev
+npm run dev:all
 ```
 Then open the frontend in another tab in your browser:
 1. Go to the terminal in the bottom of the Codespaces window
