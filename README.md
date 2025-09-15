@@ -5,6 +5,7 @@ Build a tiny Reddit-like feed with an upvote button that persists to MongoDB.
 This is a tiny feature implemented across the full stack (frontend, backend, db schema).
 
 ## Desired outcomes
+- Add upvote numbers to posts. The current '-' text next to a post will contain the upvote number
 - Add a button next to a post's upvote number to let the user upvote that post. You have full freedom over style
 - Create backend routes to handle upvotes and the undo-ing of upvotes
 - Prevent more than one upvote by the user per post (also server-side)
