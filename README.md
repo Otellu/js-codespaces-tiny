@@ -1,6 +1,6 @@
 # ⚡ JS Mini: Reddit-Style Upvote
 
-Build a tiny Reddit-like feed with an upvote button that persists to MongoDB.
+Build a tiny Reddit-like feed with an upvote button that persists to the database.
 
 This is a tiny feature implemented across the full stack (frontend, backend, db schema).
 
