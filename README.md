@@ -14,11 +14,14 @@ This is a tiny feature implemented across the full stack (frontend, backend, db 
 
 ## Getting started
 ```bash
-npm run install:all
-docker-compose up -d
-npm run db:init   # optional seed
 npm run dev
 ```
+Then open the frontend in another tab in your browser:
+1. Go to the terminal in the bottom of the Codespaces window
+2. Go to the Ports tab
+3. Find the frontend, hover, and click on the globe icon to go to the live frontend URL
+
+Hot-reloading will be enabled.
 
 ## Tech
 - Backend: Express + Mongoose, permissive CORS
