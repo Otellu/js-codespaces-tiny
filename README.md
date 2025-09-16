@@ -24,4 +24,4 @@ Then open the frontend in another tab in your browser:
 
 Hot-reloading will be enabled.
 
-*Hint: you may use `npx sequelize-cli migration:generate --name [migration name]` to make a database migration* 
+Hint: you may use `npx sequelize-cli migration:generate --name [migration name]` to make a database migration
