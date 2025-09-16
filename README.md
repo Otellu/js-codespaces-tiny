@@ -23,3 +23,5 @@ Then open the frontend in another tab in your browser:
 3. Find the frontend, hover, and click on the globe icon to go to the live frontend URL
 
 Hot-reloading will be enabled.
+
+*Hint: you may use `npx sequelize-cli migration:generate --name [migration name]` to make a database migration* 
