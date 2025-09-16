@@ -5,6 +5,7 @@ Build a tiny Reddit-like feed with an upvote button that persists to the databas
 This is a tiny feature implemented across the full stack (frontend, backend, db schema).
 
 ## Desired outcomes
+
 - Add upvote numbers to posts. The current '-' text next to a post will contain the upvote number
 - Add a button next to a post's upvote number to let the user upvote that post. You have full freedom over style
 - Create backend routes to handle upvotes and the undo-ing of upvotes
@@ -12,16 +13,31 @@ This is a tiny feature implemented across the full stack (frontend, backend, db 
 - Make it clear in the frontend when a post is upvoted by the user - you have freedom over how
 - Vote counts should persist across page refreshes
 
-
 ## Getting started
+
+Wait until the codespace has loaded fully (5-8 minutes).
+
+Then, set up the database viewer to connect with the database:
+
+1. After the codespace is fully initialized, copy the value for `DATABASE_URL` from `backend/.env`
+2. In the left vertical toolbar, go to the Database extension (second-to-last icon)
+3. Press Create Connection and scroll down and toggle Use Connection String
+4. Paste the copied DB connection string there, and press the + Connect button. You now can view the pre-seeded Posts table.
+
+Then, run the app:
+
 ```bash
 npm run dev:all
 ```
+
 Then open the frontend in another tab in your browser:
+
 1. Go to the terminal in the bottom of the Codespaces window
 2. Go to the Ports tab
 3. Find the frontend, hover, and click on the globe icon to go to the live frontend URL
 
 Hot-reloading will be enabled.
 
-Hint: you may use `npx sequelize-cli migration:generate --name [migration name]` to make a database migration
+Please wait with coding until your interviewer says you may begin. good luck!
+
+_Hint_: you may use `npx sequelize-cli migration:generate --name [migration name]` to make a database migration.
