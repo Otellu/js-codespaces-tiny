@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function RedditCard({ title, votes, username }) {
+
+
+export default function RedditCard({ key, title, votes, username }) {
+  const postVote = async (key, username) => {
+    const result = await fetch("/upvote/" + key, { username: username });
+  };
   return (
     <div className="bg-white rounded-md border border-gray-200 overflow-hidden">
       <div className="flex">
@@ -8,12 +13,15 @@ export default function RedditCard({ title, votes, username }) {
           <div className="text-sm font-semibold text-gray-700">{votes}</div>
         </div>
         <div className="flex-1 p-4">
-          <div className="text-xs text-gray-500 mb-1">Posted by {username} in r/jsmini</div>
+          <div className="text-xs text-gray-500 mb-1">
+            Posted by {username} in r/jsmini
+          </div>
           <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
+          <button className="btn" name="upvote" onClick={}>
+            UpVote
+          </button>
         </div>
       </div>
     </div>
   );
 }
-
-

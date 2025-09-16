@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/', listPosts);
 router.get('/:id', getPostById);
+router.post('/upvote/:id', upvotePost);
 
 module.exports = router;
 

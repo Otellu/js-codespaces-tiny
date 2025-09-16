@@ -28,11 +28,29 @@ const getPostById = async (req, res) => {
   }
 };
 
+const upvotePost = async (req, res) => {
+  try {
+    console.log("res::", req);
+    const postId = req.id;
+    const {username} = req.body;
+    const post = await Post.findByPk(postId);
+    const updateData = {
+      username: username,
+      vote: post.vote+1,
+    }
+    await Post.update(updateData);
+    res.status(200).json({message: "Upvoted"})
+  } catch (err) {
+    return res.status(500).json({ message: 'Failed to upvote' });
+  }
+}
+
 
 
 module.exports = {
   listPosts,
   getPostById,
+  upvotePost
 };
 
 
