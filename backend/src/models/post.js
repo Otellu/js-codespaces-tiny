@@ -16,6 +16,11 @@ const Post = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    upvote: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
