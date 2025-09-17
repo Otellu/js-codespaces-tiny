@@ -51,7 +51,8 @@ function App() {
           {!loading &&
             posts.map((post) => (
               <RedditCard
-                key={post._id}
+                key={post.id}
+                id={post.id}
                 title={post.title}
                 votes={post.votes || "-"}
                 username={post.username}
