@@ -20,6 +20,9 @@ const Post = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    votes: {
+      type: DataTypes.INTEGER
+    }
   },
   {
     tableName: "posts",

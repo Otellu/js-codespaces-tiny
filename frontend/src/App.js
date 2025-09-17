@@ -26,6 +26,20 @@ function App() {
 
   const API_URL = getApiUrl();
 
+  const handleUpvoke = (id, votes) =>{
+    try {
+      let url, method = "POST";
+
+      if(votes) {
+        const res = `${API_URL}/unvotePost/${id}`;
+      }else {
+        const res = `${API_URL}/upvotePost/${id}`;
+      } 
+    } catch (error) {
+      
+    }
+  }
+
   useEffect(() => {
     async function fetchPosts() {
       try {
@@ -55,6 +69,7 @@ function App() {
                 title={post.title}
                 votes={post.votes || "-"}
                 username={post.username}
+                handleUpvoke={handleUpvoke}
               />
             ))}
           {!loading && posts.length === 0 && (
